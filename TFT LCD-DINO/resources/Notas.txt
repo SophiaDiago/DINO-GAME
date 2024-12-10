@@ -1,0 +1,2 @@
+
+Pagina para convertir de imagenes a array de byte: https://mischianti.org/images-to-byte-array-online-converter-cpp-arduino/

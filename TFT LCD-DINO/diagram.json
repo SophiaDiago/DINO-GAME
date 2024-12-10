@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "author": "SOFIA DIAGO",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-mega", "id": "mega", "top": 96.6, "left": 6, "attrs": {} },
+    { "type": "wokwi-ili9341", "id": "lcd2", "top": -200.8, "left": 479.7, "attrs": {} },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 25.4,
+      "left": 758.4,
+      "attrs": { "color": "yellow", "key": "ArrowUp" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn2",
+      "top": 111.8,
+      "left": 758.4,
+      "attrs": { "color": "red", "key": "ArrowDown" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 205,
+      "left": 719.15,
+      "rotate": 270,
+      "attrs": { "value": "10000" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 109,
+      "left": 671.15,
+      "rotate": 270,
+      "attrs": { "value": "10000" }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": -64.8,
+      "left": 155.4,
+      "attrs": { "volume": "0.1" }
+    }
+  ],
+  "connections": [
+    [ "lcd2:VCC", "mega:5V", "red", [ "v230.4", "h-355.2" ] ],
+    [ "lcd2:GND", "mega:GND.2", "black", [ "v240", "h-355.2" ] ],
+    [ "mega:6", "lcd2:CS", "green", [ "v-28.8", "h216.4", "v124.8", "h134.4" ] ],
+    [ "mega:7", "lcd2:D/C", "violet", [ "v-38.4", "h236", "v124.8", "h124.8" ] ],
+    [ "mega:11", "lcd2:MOSI", "gold", [ "v-48", "h297.2", "v124.8", "h124.8" ] ],
+    [ "lcd2:SCK", "mega:13", "blue", [ "v19.2", "h-115.21", "v-67.2", "h-9.6" ] ],
+    [ "lcd2:LED", "mega:5V.2", "orange", [ "v0" ] ],
+    [ "lcd2:MISO", "mega:12", "white", [ "v124.8", "h-201.61", "v-124.8", "h-57.6" ] ],
+    [ "lcd2:RST", "mega:10", "green", [ "v48", "h-96", "v-86.4", "h-288" ] ],
+    [ "mega:GND.2", "r1:1", "black", [ "v74.1", "h578.15" ] ],
+    [ "mega:GND.2", "r2:1", "black", [ "v74.1", "h530.15" ] ],
+    [ "btn1:2.l", "r2:2", "black", [ "h0" ] ],
+    [ "btn2:2.l", "r1:2", "black", [ "h0" ] ],
+    [ "mega:3.3V", "btn2:1.l", "green", [ "v54.9", "h559", "v-211.2" ] ],
+    [ "mega:3.3V", "btn1:1.l", "green", [ "v54.9", "h559", "v-297.6" ] ],
+    [ "btn1:2.r", "mega:20", "cyan", [ "h19.4", "v-38.2", "h-172.8", "v201.6", "h-336" ] ],
+    [ "btn2:2.r", "mega:21", "cyan", [ "h19.4", "v96.2", "h-489.6" ] ],
+    [ "mega:GND.1", "bz1:1", "black", [ "v0" ] ],
+    [ "mega:9", "bz1:2", "red", [ "v-76.8", "h18.5" ] ]
+  ],
+  "dependencies": {}
+}
